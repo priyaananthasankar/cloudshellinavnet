@@ -14,8 +14,5 @@ Inside this resource group:
 - Create a private endpoint for relaysubnet and make sure it is integrated with a private DNS zone.
 - Create A record for the relay namespace in the private DNS zone
 
-# Workflow 2: Create Cloud Shell in a VNET using official ARM template
-- Use this [ARM template](https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/cloud-shell-vnet/) to deploy cloud shell in a VNET
-
 # Workflow 3: Cleanup
 - Delete the resource group created in Workflow 1
