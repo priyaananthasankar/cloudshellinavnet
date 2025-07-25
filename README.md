@@ -72,3 +72,10 @@ az account show
    - The agent will execute each step automatically
    - View Azure CLI commands and outputs in the terminal
    - Infrastructure creation takes 5-10 minutes
+
+7. **Launch Cloud Shell in a VNET**
+    - Open the [Azure Portal](https://portal.azure.com/)
+    - Navigate to "Cloud Shell" from the top navigation bar
+    - Select "Bash" or "PowerShell" as preferred
+    - In the Cloud Shell setup dialog, check "Use an existing private virtual network" and following the setup.
+    - Complete the setup and verify Cloud Shell is running within your specified VNET
