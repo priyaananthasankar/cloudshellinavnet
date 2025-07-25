@@ -62,4 +62,4 @@ In Azure Relay networking, disable public access. Repeat the steps in Workflow 8
 
 # 🧹 Cleanup:
 
-- 🗑️ Delete the resource group and all resources inside it
+- 🗑️ Delete the resource group along with all its resources, ensuring that dependencies are properly handled to avoid deletion errors.
