@@ -25,7 +25,41 @@ Workflows 1 and 2 are prerequisites for this:
 
 - Create a storage account
 - Create another subnet in the VNET called storagesubnet and add a service endpoint for storage accounts.
+- Create a file share for this storage account called testshare
 
-# Workflow 4: Test the connectivity lookup of relay endpoint and confirm it is redirecting to private link.
+# Workflow 4: Relay endpoint connectivity
 
 Test net connection and lookup of relay namespace from laptop.
+
+# Workflow 5: Storage account access
+
+Test nslookup of storage account from laptop and it should succeed and show a public IP.
+
+# Workflow 6: Storage behind a private endpoint
+
+Add a private endpoint to the storage account and test nslookup of storage account (file endpoint only) from laptop and it should show public IP.
+
+# Workflow 7: Lock down storage account
+
+Workflow 3 and 6 are prerequisites.
+Lock down storage by disabling public network access
+
+# Workflow 8: Test connectivity
+
+Create a test subnet in the VNET.
+
+- Create a VM inside the test subnet (try different sizes etc to successfully create one) and inject it into the vnet to test storage connectivity. 
+
+- If VM's are unavailable, use basic ubuntu ACI with subnetifref inside the test subnet (do not touch the existing network profile). 
+
+- If ACI creation fails due to docker registry issues, then provide some way of definitive proof.
+
+- Test connectivity of storage and relay endpoints.
+
+# Workflow 9: Lock down Azure Relay
+
+In Azure Relay networking, disable public access. Repeat workflow 8.
+
+# Cleanup:
+
+Delete the resource group and all resources inside it
