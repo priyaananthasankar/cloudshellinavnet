@@ -14,14 +14,14 @@ Inside this resource group:
 
 # Workflow 2: Add private link
 
-Workflows 1 is a prerequisite for this:
+> **Note:** Workflow 1 is a prerequisite for Workflow 2.
 
 - Create a private endpoint for relaysubnet and make sure it is integrated with a private DNS zone.
 - Create A record for the relay namespace in the private DNS zone
 
 # Workflow 3: Add a storage account
 
-Workflows 1 and 2 are prerequisites for this:
+> **Note:** Workflows 1 and 2 are prerequisites for Workflow 3
 
 - Create a storage account
 - Create another subnet in the VNET called storagesubnet and add a service endpoint for storage accounts.
@@ -37,20 +37,20 @@ Test nslookup of storage account from laptop and it should succeed and show a pu
 
 # Workflow 6: Storage behind a private endpoint
 
-Add a private endpoint to the storage account and test nslookup of storage account (file endpoint only) from laptop and it should show public IP.
+Add a private endpoint to the storage account. Test nslookup of the storage account's file endpoint from your laptop; unless private DNS integration is configured, it should still resolve to a public IP. This confirms that private endpoint DNS is not yet in effect for the file endpoint.
 
 # Workflow 7: Lock down storage account
 
-Workflow 3 and 6 are prerequisites.
-Lock down storage by disabling public network access
+> **Note:** Workflows 3 and 6 are prerequisites for Workflow 7.
 
-# Workflow 8: Test connectivity
+- Lock down storage by disabling public network access
+
+# Workflow 8: Test connectivity of storage and relay
 
 Create a test subnet in the VNET.
 
 - Create a VM inside the test subnet (try different sizes etc to successfully create one) and inject it into the vnet to test storage connectivity. 
-
-- If VM's are unavailable, use basic ubuntu ACI with subnetifref inside the test subnet (do not touch the existing network profile). 
+- If VMs are unavailable, use a basic Ubuntu Azure Container Instance (ACI) with subnet interface reference inside the test subnet.
 
 - If ACI creation fails due to docker registry issues, then provide some way of definitive proof.
 
@@ -58,8 +58,8 @@ Create a test subnet in the VNET.
 
 # Workflow 9: Lock down Azure Relay
 
-In Azure Relay networking, disable public access. Repeat workflow 8.
+In Azure Relay networking, disable public access. Repeat the steps in Workflow 8 to verify connectivity after disabling public access.
 
 # Cleanup:
 
-Delete the resource group and all resources inside it
+- Delete the resource group and all resources inside it
