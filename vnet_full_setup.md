@@ -9,11 +9,11 @@
   - 🧩 Make two subnets (use default IP ranges):
     - `cloudshellsubnet` (for container groups) (for container groups) and delegate Microsoft.ContainerInstance/containerGroups to cloudshellsubnet
     - `relaysubnet`
-  - 🛡️ Give network contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for network profile.
-  - 🛡️ Give contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for Azure Relay.
   - 🏗️ Make a network profile using an ARM template. Use the resource ID of `cloudshellsubnet`.
     - 🏗️ Use the network profile ARM template.
   - 🔍 Make a relay namespace.
+  - 🛡️ Give network contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for network profile.
+  - 🛡️ Give contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for Azure Relay.
   - 🔒 Make a private endpoint for `relaysubnet` and link it to a private DNS zone. Add an A record for the relay namespace in the private DNS zone.
   - 📄 Add a NAT gateway with a public IP
   - 🧩 Associate it with cloud shell subnet
