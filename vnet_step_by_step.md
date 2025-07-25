@@ -11,6 +11,8 @@ Inside this resource group:
 - 📄 Create an ARM template for network profile and use cloudshellsubnet resource id in the template in current folder.
 - 🏗️ Apply the network profile ARM template located in current folder.
 - 📡 Create a relay namespace
+- 🛡️ Give network contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for network profile.
+- 🛡️ Give contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for Azure Relay.
 
 # 🔒 Workflow 2: Add private link
 
