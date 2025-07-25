@@ -7,7 +7,7 @@
 3. In the resource group:
   - Make a VNET.
   - Make two subnets (use default IP ranges):
-    - `cloudshellsubnet` (for container groups)
+    - `cloudshellsubnet` (for container groups) and delegate Microsoft.ContainerInstance/containerGroups to cloudshellsubnet
     - `relaysubnet`
   - Make a network profile using an ARM template. Use the resource ID of `cloudshellsubnet`.
   - Use the network profile ARM template.
