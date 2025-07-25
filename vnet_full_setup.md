@@ -14,6 +14,8 @@
   - Make a relay namespace.
   - Make a private endpoint for `relaysubnet` and link it to a private DNS zone.
   - Add an A record for the relay namespace in the private DNS zone.
+  - Add a NAT gateway with a public IP
+  - Associate it with cloud shell subnet
   - Create a storage account and a file share called testshare
   - Add a private endpoint for the storage account
 
