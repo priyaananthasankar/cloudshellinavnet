@@ -14,8 +14,10 @@
   - Make a relay namespace.
   - Make a private endpoint for `relaysubnet` and link it to a private DNS zone.
   - Add an A record for the relay namespace in the private DNS zone.
+  - Create a storage account and a file share called testshare
+  - Add a private endpoint for the storage account
 
-## Workflow 2: Cleanup
+## Cleanup
 
 - Delete the resource group created above.
 
