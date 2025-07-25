@@ -25,3 +25,7 @@ Workflows 1 and 2 are prerequisites for this:
 
 - Create a storage account
 - Create another subnet in the VNET called storagesubnet and add a service endpoint for storage accounts.
+
+# Workflow 4: Test the connectivity lookup of relay endpoint and confirm it is redirecting to private link.
+
+Test net connection and lookup of relay namespace from laptop.
