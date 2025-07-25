@@ -8,8 +8,8 @@ Inside this resource group:
 - Create 2 subnets (use default values for IP ranges)
   - cloudshellsubnet (delegate container groups to this subnet)
   - relaysubnet
-- Create an ARM template for network profile and use cloudshellsubnet resource id in the template 
-- Apply the network profile ARM template.
+- Create an ARM template for network profile and use cloudshellsubnet resource id in the template in current folder.
+- Apply the network profile ARM template located in current folder.
 - Create a relay namespace
 
 # Workflow 2: Add private link
