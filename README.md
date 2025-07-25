@@ -46,7 +46,7 @@ az account show
    ```
 
 2. **Open the Agent Prompt**
-   - Open `agent_prompt.md` in VS Code
+   - Open `vnet_full_setup.md` in VS Code
    - This file contains the workflow definitions
 
 3. **Activate GitHub Copilot Chat**
@@ -79,3 +79,5 @@ az account show
     - Select "Bash" or "PowerShell" as preferred
     - In the Cloud Shell setup dialog, check "Use an existing private virtual network" and following the setup.
     - Complete the setup and verify Cloud Shell is running within your specified VNET
+
+Note: If you want to set this up step by step, use the `vnet_step_by_step.md`.
