@@ -8,11 +8,11 @@ Inside this resource group:
 - 🧩 Create 2 subnets (use default values for IP ranges)
     - 🪐 **cloudshellsubnet** (delegate container groups to this subnet)
     - 🔗 **relaysubnet**
-- 📄 Create an ARM template for network profile and use cloudshellsubnet resource id in the template in current folder.
+- 📄 Create a network profile using the `network-profile-template.json` file in this folder. In that file substitute `<FILL IN SUBNET RESOURCE ID>` with the actual resource ID of `cloudshellsubnet`.
 - 🏗️ Apply the network profile ARM template located in current folder.
 - 📡 Create a relay namespace
-- 🛡️ Give network contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for network profile.
-- 🛡️ Give contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for Azure Relay.
+- 🛡️ Assign network contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for network profile.
+- 🛡️ Assign contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for Azure Relay.
 
 # 🔒 Workflow 2: Add private link
 

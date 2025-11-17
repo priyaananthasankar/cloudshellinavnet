@@ -2,19 +2,19 @@
 
 ## Workflow 1: Set Up Cloud Shell in a VNET
 
-1. Choose a location.
-2.  🛠️ Make a resource group.
+1. Ask the user for a region. Do not assume a region. All resources from Step 2 must be created in that region ONLY.
+2.  🛠️ Create a resource group in that region
 3. In the resource group:
-  - 🌐 Make a VNET.
-  - 🧩 Make two subnets (use default IP ranges):
+  - 🌐 Create a VNET.
+  - 🧩 Create two subnets (use default IP ranges):
     - `cloudshellsubnet` (for container groups) (for container groups) and delegate Microsoft.ContainerInstance/containerGroups to cloudshellsubnet
     - `relaysubnet`
-  - 🏗️ Make a network profile using an ARM template. Use the resource ID of `cloudshellsubnet`.
-    - 🏗️ Use the network profile ARM template.
-  - 🔍 Make a relay namespace.
-  - 🛡️ Give network contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for network profile.
-  - 🛡️ Give contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for Azure Relay.
-  - 🔒 Make a private endpoint for `relaysubnet` and link it to a private DNS zone. Add an A record for the relay namespace in the private DNS zone.
+  - 🏗️ Create a network profile using the `network-profile-template.json` file in this folder. In that file substitute `<FILL IN SUBNET RESOURCE ID>` with the actual resource ID of `cloudshellsubnet`.
+    - 🏗️ Deploy the network profile ARM template.
+  - 🔍 Create a relay namespace.
+  - 🛡️ Provide network contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for network profile.
+  - 🛡️ Provide contributor access to `6bb8e274-af5d-4df2-98a3-4fd78b4cafd9` (Azure Container Instance Service) for Azure Relay.
+  - 🔒 Create a private endpoint for `relaysubnet` and link it to a private DNS zone. Add an A record for the relay namespace in the private DNS zone.
   - 📄 Add a NAT gateway with a public IP
   - 🧩 Associate it with cloud shell subnet
   - 🏦 Create a storage account and a file share called testshare

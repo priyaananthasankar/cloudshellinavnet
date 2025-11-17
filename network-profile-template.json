@@ -1,0 +1,60 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "networkProfileName": {
+      "type": "string",
+      "defaultValue": "cloudshell-networkprofile",
+      "metadata": {
+        "description": "Name of the network profile"
+      }
+    },
+    "subnetId": {
+      "type": "string",
+      "defaultValue": "<FILL IN SUBNET RESOURCE ID>",
+      "metadata": {
+        "description": "Resource ID of the subnet for container groups"
+      }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "centralindia",
+      "metadata": {
+        "description": "Location for the network profile"
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/networkProfiles",
+      "apiVersion": "2019-04-01",
+      "name": "[parameters('networkProfileName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "containerNetworkInterfaceConfigurations": [
+          {
+            "name": "eth0",
+            "properties": {
+              "ipConfigurations": [
+                {
+                  "name": "ipconfigprofile1",
+                  "properties": {
+                    "subnet": {
+                      "id": "[parameters('subnetId')]"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": {
+    "networkProfileId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Network/networkProfiles', parameters('networkProfileName'))]"
+    }
+  }
+}
